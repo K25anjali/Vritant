@@ -40,7 +40,7 @@ export const Button = ({
 	return (
 		<button
 			onClick={onClick}
-			className={`bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-colors font-medium rounded focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-transparent ${sizeClasses[size]} ${className}`}
+			className={`bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-colors font-medium rounded z-50 focus:outline-none focus:ring-1 focus:ring-purple-400 focus:border-transparent ${sizeClasses[size]} ${className}`}
 			{...props}
 		>
 			{children}

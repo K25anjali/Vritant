@@ -18,7 +18,7 @@ const BlogPage = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		if (location.state?.blog) {
+		if (location?.state?.blog) {
 			setBlogId(location.state.blog.id);
 			setTitle(location.state.blog.blogTitle);
 			setContent(location.state.blog.blogBody);
@@ -66,7 +66,7 @@ const BlogPage = () => {
 			setCategory("");
 		} catch (err) {
 			toast.error("Login expired. Please login again.");
-			navigate("/");
+			// navigate("/");
 		}
 	};
 
@@ -83,7 +83,7 @@ const BlogPage = () => {
 				</h1>
 				<form onSubmit={handleSubmit} className="mt-4">
 					<div>
-						<label className="block text-gray-900">Title</label>
+						<label className="block text-gray-100">Title</label>
 						<Input
 							type="text"
 							value={title}
@@ -92,7 +92,7 @@ const BlogPage = () => {
 						/>
 					</div>
 					<div>
-						<label className="block text-gray-900">Content</label>
+						<label className="block text-gray-100">Content</label>
 						<textarea
 							value={content}
 							onChange={(e) => setContent(e.target.value)}
@@ -102,7 +102,7 @@ const BlogPage = () => {
 						/>
 					</div>
 					<div className="mb-2">
-						<label className="block text-gray-900">Category</label>
+						<label className="block text-gray-100">Category</label>
 						<select
 							value={category}
 							onChange={(e) => setCategory(e.target.value)}

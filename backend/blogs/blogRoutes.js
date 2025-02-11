@@ -16,7 +16,7 @@ router.post("/new", async (req, res) => {
 		}
 
 		const newBlogSql =
-			"INSERT INTO blog (author, name, blogBody, blogTitle, createdAt, category) VALUES (?, ?, ?, ?, ?)";
+			"INSERT INTO blog (author, name, blogBody, blogTitle, createdAt, category) VALUES (?, ?, ?, ?, ?, ?)";
 		const createdAt = Date.now();
 		const params = [
 			user.userName,

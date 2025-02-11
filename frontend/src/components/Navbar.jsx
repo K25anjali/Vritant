@@ -77,7 +77,7 @@ export const HomeNavbar = ({ users, uuid, userName }) => {
 	};
 
 	return (
-		<nav className="bg-transparent border rounded-md flex items-center mt-6 font-serif z-50 fixed top-0">
+		<nav className="bg-transparent border rounded-md flex items-center mt-6 font-serif z-50">
 			<div className="flex items-center justify-between w-[80vw] py-2 px-4">
 				<Link
 					to="/"
@@ -85,7 +85,7 @@ export const HomeNavbar = ({ users, uuid, userName }) => {
 				>
 					Vritant
 				</Link>
-				<div className="space-x-4 flex items-center ">
+				<div className="space-x-4 flex items-center">
 					<div className="relative z-1000">
 						<Input
 							id="search"
@@ -97,7 +97,7 @@ export const HomeNavbar = ({ users, uuid, userName }) => {
 							className="w-72"
 						/>
 						{filteredUsers.length > 0 && search.length > 1 && (
-							<ul className="absolute bg-gray-900 w-full rounded-md mt-2 px-2">
+							<ul className="absolute bg-gray-900 w-full rounded-md mt-2 px-2 z-50">
 								{filteredUsers.map((user) => (
 									<li className="border-b-[0.1px] border-purple-300 pb-2">
 										<Link

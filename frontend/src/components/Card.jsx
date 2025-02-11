@@ -58,13 +58,13 @@ export const BlogCard = ({ blog, user, uuid }) => {
 	return (
 		<article
 			key={blog.id}
-			className="border border-purple-400 p-4 h-full mt-8 rounded max-w-3xl"
+			className="border border-purple-400 p-4 h-full rounded max-w-3xl"
 		>
 			<div className="flex">
 				<div className="w-full flex justify-between">
 					<div className="flex space-x-2 text-lg mb-8">
-						<UserAvatar userName={blog.author} size={8} />
-						<Link to={`/profile/${user.author}`}>
+						<UserAvatar userName={blog.author} size="6" />
+						<Link to={`/profile/${blog.author}`}>
 							<h1 className="hover:underline text-xl font-semibold">
 								{blog.author}
 							</h1>
@@ -92,13 +92,15 @@ export const BlogCard = ({ blog, user, uuid }) => {
 					</div>
 				)}
 			</div>
-			<div className="mx-10">
+			<div className="mx-10 text-gray-200">
 				<h3 className="font-serif text-3xl font-bold mb-2 leading-tight">
 					{blog.blogTitle}
 				</h3>
-				<p className="leading-relaxed font-serif">{blog.blogBody}</p>
+				<p className="leading-relaxed font-serif text-gray-400">
+					{blog.blogBody}
+				</p>
 			</div>
-			<p className="text-sm text-white flex justify-end">
+			<p className="text-sm flex justify-end pt-8">
 				{new Date(blog.createdAt).toLocaleDateString()}
 			</p>
 		</article>

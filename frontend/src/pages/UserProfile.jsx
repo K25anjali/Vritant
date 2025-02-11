@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import ReqModal from "../components/ReqModal";
@@ -69,7 +69,7 @@ const UserProfile = () => {
 	useEffect(() => {
 		fetchUser();
 		fetchBlogs(5, 0);
-	}, [fetchUser, fetchBlogs]);
+	}, []);
 
 	// Send Follow Request
 	const sendFollowRequest = async (uuid, followingUserName, action) => {
@@ -79,9 +79,10 @@ const UserProfile = () => {
 				followingUserName,
 				action,
 			});
-			toast.success(response.data.message);
-			setMsg("Sent");
-			console.log(msg);
+			if (response.status == 200) {
+				toast.success(response.data.message);
+				setMsg("Sent");
+			}
 		} catch (error) {
 			console.error("Error:", error.response?.data?.error || error.message);
 			if (error.response?.status === 401) {
@@ -94,7 +95,7 @@ const UserProfile = () => {
 
 	const handleRequest = () => {
 		sendFollowRequest(uuid, userName, "request");
-		window.location.reload();
+		// window.location.reload();
 	};
 
 	const showAllReq = async (action) => {
@@ -114,7 +115,8 @@ const UserProfile = () => {
 				followerUserName,
 				action,
 			});
-			console.log(res.data);
+			toast.success(res.data.message);
+			window.location.reload();
 		} catch (error) {
 			console.error(error);
 		}
@@ -252,6 +254,7 @@ const UserProfile = () => {
 					</motion.div>
 				</div>
 			</div>
+
 			<footer className="bg-zinc-800 text-zinc-300 w-full mt-auto z-10">
 				<div className="border-t border-b border-gray-700 text-gray-400 flex justify-center items-center">
 					<p className="py-8 text-center">

@@ -324,9 +324,3 @@ router.post("/getUser", async (req, res) => {
 });
 
 module.exports = router;
-
-// userName, followStatus, followerCount, followingCount , followReqCount
-// userName, uuid
-// userName and uuid null return userName, followStatus = null, followerCount, followingCount
-// userName and uuid(userName) if different return userName, followStatus, followerCount, followingCount
-// userName and uuid(userName) if same return userName, followStatus = self, followerCount, followingCount,         followReqCount

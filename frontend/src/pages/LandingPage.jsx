@@ -216,6 +216,8 @@ const LandingPage = () => {
 export default LandingPage;
 
 export const Header = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="max-w-7xl mx-auto py-20 md:py-40 px-4 w-full left-0 top-0 space-y-8">
 			<h1 className="text-2xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
@@ -226,7 +228,9 @@ export const Header = () => {
 				Join Vritant, where every story finds its audience. Create, connect, and
 				captivate with your unique perspective.
 			</p>
-			<Button>Start Your Journey</Button>
+			<Button className="z-1000" onClick={() => navigate("/register")}>
+				Get Started
+			</Button>
 		</div>
 	);
 };

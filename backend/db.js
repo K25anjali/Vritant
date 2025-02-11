@@ -1,13 +1,22 @@
 // require("dotenv").config();
 const mysql = require("mysql2");
 
-const DB_NAME = process.env.DB_NAME;
+// const DB_NAME = process.env.DB_NAME;
+
+// Create connection using environment variables
+// const db = mysql.createConnection({
+// 	host: process.env.DB_HOST,
+// 	user: process.env.DB_USER,
+// 	password: process.env.DB_PASSWORD,
+// });
+
+const DB_NAME = "vritant_db";
 
 // Create connection using environment variables
 const db = mysql.createConnection({
-	host: process.env.DB_HOST,
-	user: process.env.DB_USER,
-	password: process.env.DB_PASSWORD,
+	host: "localhost",
+	user: "root",
+	password: "Anjali25#",
 });
 
 // Establish connection and create the schema (if it doesn't exist)

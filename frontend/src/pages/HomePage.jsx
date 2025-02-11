@@ -28,8 +28,18 @@ const HeroPage = () => {
 	}, []);
 
 	return (
-		<div className="relative bg-black text-white min-h-screen h-auto flex flex-col justify-center items-center">
-			<HomeNavbar users={users} uuid={uuid} userName={userName} />
+		<div className="relative min-h-screen flex flex-col bg-black/90 text-white overflow-hidden">
+			{/* Background Blobs */}
+			<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl ">
+				<div className="absolute top-0 left-0 w-72 h-64 bg-purple-900 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob overflow-y-hidden "></div>
+				<div className="absolute top-0 right-0 w-72 h-72 bg-pink-900 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+				<div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-900 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+			</div>
+
+			<div className="relative max-w-7xl mx-auto">
+				<HomeNavbar users={users} uuid={uuid} userName={userName} />
+			</div>
+
 			<div className="relative max-w-7xl mx-auto h-auto mb-20 z-10">
 				<motion.div className="grid grid-cols-1 gap-8 my-10">
 					{blogs.length > 0 ? (
@@ -41,19 +51,14 @@ const HeroPage = () => {
 					)}
 				</motion.div>
 			</div>
-			<footer className="bg-zinc-800 text-zinc-300 w-full">
+			<footer className="bg-zinc-800 text-zinc-300 w-full z-50">
 				<div className="border-t border-b border-gray-700 text-gray-400 flex justify-center items-center">
-					<p className="py-8 text-center">
+					<p className="py-6 text-center">
 						&copy; {new Date().getFullYear()} Vritant. Made with ❤️ by{" "}
 						<Link to="https://github.com/K25anjali">Anjali</Link>
 					</p>
 				</div>
 			</footer>
-			<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl ">
-				<div className="absolute top-0 left-0 w-72 h-72 bg-purple-900 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-				<div className="absolute top-0 right-0 w-72 h-72 bg-pink-900 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-				<div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-900 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
-			</div>
 		</div>
 	);
 };
