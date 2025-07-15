@@ -1,4 +1,4 @@
-Social Blogging Platform (Vritant)
+Social Blogging Platform (Vritant) -- https://frontend-gamma-mocha-33.vercel.app/
 Project Overview
 Vritant is a full-stack social blogging platform built with React (frontend) and Node.js/Express.js (backend) with a MySQL database. It enables users to register, log in, create/edit/delete blogs, and interact socially through a follow system with request, accept, and reject functionalities. The application features a responsive UI with animations, secure authentication, and efficient data handling.
 
